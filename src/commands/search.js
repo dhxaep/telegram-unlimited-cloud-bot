@@ -42,10 +42,10 @@ async function startSearch(ctx) {
   
   const text = 'Pilih Tahun:';
   if (ctx.callbackQuery) {
-    return ctx.editMessageText(text, Markup.inlineKeyboard(buttons)).catch(()=>{}).then(()=>ctx.answerCbQuery().catch(()=>{}));
-  } else {
-    return ctx.reply(text, Markup.inlineKeyboard(buttons));
+    ctx.deleteMessage().catch(()=>{});
+    ctx.answerCbQuery().catch(()=>{});
   }
+  return ctx.reply(text, Markup.inlineKeyboard(buttons));
 }
 
 // 2. Pilih Bulan
