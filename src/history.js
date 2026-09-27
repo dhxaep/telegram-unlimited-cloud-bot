@@ -48,6 +48,11 @@ const history = {
       this.save();
       console.log(`Deleted ${initialLength - fileHistory.length} files from history for folder ${folderName}`);
     }
+  },
+
+  clearAll() {
+    fileHistory = [];
+    this.save();
   }
 };
 

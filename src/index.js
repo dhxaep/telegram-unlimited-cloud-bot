@@ -22,6 +22,14 @@ const routerHandler = require('./handlers/router');
 bot.command(['start', 'help', 'menu', 'stats', 'dashboard'], menuCommand);
 
 bot.command('lock', lockCommand);
+
+bot.command('reset', (ctx) => {
+  state.data = { totalFilesProcessed: 0, totalBytesProcessed: 0, statsByCategory: {}, userTargetTopics: {}, knownTopics: {}, TARGET_GROUP_ID: null };
+  state.save();
+  require('./history').clearAll();
+  return ctx.reply('✅ Semua data lama, statistik, dan history file berhasil dihapus!\nSilakan tambahkan bot ke grup baru lalu jalankan perintah `/lock`.', {parse_mode: 'Markdown'});
+});
+
 bot.command('add', addFolder);
 bot.command('exit', exitFolder);
 bot.command(['rmfolder', 'hapusfolder'], rmFolder);
