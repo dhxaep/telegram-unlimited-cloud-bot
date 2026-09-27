@@ -95,6 +95,4 @@ This bot is **Private** by default, meaning it only responds to its *Owner* base
 | `/search` | Opens the interactive file search feature. |
 | `/stats`, `/dashboard` | Shows the current storage capacity status. |
 
----
 
-*Built with ❤️ for unlimited and organized Telegram file management.*
